@@ -1,0 +1,39 @@
+<form [formGroup]="certificationForm" (ngSubmit)="mysubmitForm()">
+    <!-- File Upload Section -->
+    <div>
+      <label for="pdfFile">PDF File:</label>
+      <input type="file" id="pdfFile" (change)="onFileChange($event)" />
+    </div>
+  
+    <div>
+      <label for="pdfName">PDF Name:</label>
+      <input type="text" id="pdfName" formControlName="pdfName" (input)="onNameChange($event)" />
+    </div>
+  
+    <button type="button" (click)="onAdd()">Add</button>
+    <!-- <button type="button" (click)="onAddMore()" [disabled]="documentCount >= maxDocuments">
+      Add More Documents
+    </button> -->
+    <button type="submit">submit</button>
+  </form>
+  
+  <!-- Display Uploaded Files Section -->
+  <div *ngIf="certificationDisplay.length > 0">
+    <h3>Uploaded Files:</h3>
+    <ul>
+      <li *ngFor="let cert of certificationDisplay">
+        <a [href]="cert.url" target="_blank">{{ cert.pdf_name }}</a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Display form array contents -->
+  <div *ngIf="certificationForm.get('certification')?.value.length > 0">
+    <h3>FormArray Contents:</h3>
+    <div *ngFor="let cert of certificationForm.get('certification')?.value">
+      <p>File Name: {{ cert.pdf_name }}</p>
+      <p>File URL: <a [href]="cert.url" target="_blank">{{ cert.url }}</a></p>
+    </div>
+  </div>
+  
+  <p *ngIf="documentCount >= maxDocuments">You have reached the maximum upload limit of 5 documents.</p>
