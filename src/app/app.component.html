@@ -1,0 +1,26 @@
+<div>
+    <div class="heading">
+        <h3>{{'This website i built only for practice' | titlecase}}</h3>
+        <p>Reactive Form</p>
+    </div>
+    <div class="form-container">
+        <div class="form-heading">Reactive Form</div>
+        <form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="input-container-field">
+                <input type="text" formControlName="name" placeholder="Enter Name">
+            </div>
+            <div class="input-container-field">
+                <input type="email" formControlName="email" placeholder="Enter Email">
+            </div>
+            <div class="form-btn">
+                <button type="submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <p>display form value</p>
+        <p>name: {{profileForm.value.name}}</p>
+        <p>email: {{profileForm.value.email}}</p>
+    </div>
+
+</div>

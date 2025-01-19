@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import {  } from '@angular/forms';
-
+import { FormControl, FormGroup } from '@angular/forms';
+import { FormsServicesService } from './services/forms-services.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
+baseURL = 'http://localhost:8080/login'
   title = 'reactive-form';
- 
+  profileForm = new FormGroup({
+    name : new FormControl(''),
+    email : new FormControl('')
+  })
+ constructor(private service: FormsServicesService) {}
  ngOnInit(): void {
    
+ }
+ onSubmit(): void {
+  this.service.submitForm(this.baseURL,this.profileForm.value).subscribe((res:any)=>{
+    console.log("res______________________",res)
+  })
+  console.log("profile data",this.profileForm.value)
  }
 }

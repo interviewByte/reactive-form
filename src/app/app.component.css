@@ -1,20 +1,80 @@
-div {
-    margin-bottom: 15px;
-  }
-  label {
-    display: block;
-    font-weight: bold;
-  }
-  input, textarea, select, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
+.heading {
+  font-family: sans-serif;
+  padding: 0.2rem;
+  text-align: end;
+  box-shadow: 5px 1px 9px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.1rem;
+}
+.form-heading {
+  font-size: 29px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: cadetblue;
+  opacity: 87%;
+}
+
+
+.heading h3 {
+  font-family: sans-serif;
+  font-family: sans-serif;
+  font-size: 26px;
+  font-weight: 550;
+  color: blueviolet;
+  text-align: end;
+  opacity: 43%;
+}
+
+.heading p {
+  font-family: sans-serif;
+  font-family: sans-serif;
+  font-size: 31px;
+  padding-right: 95px;
+  font-weight: 550;
+  color: cadetblue;
+  opacity: 68%;
+}
+
+
+.input-container-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom:  60px;
+}
+.form-container {
+  height: 350px;
+  width: 350px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding: 2rem 1.5rem
+}
+.input-container-field input {
+padding: 1rem 0.7rem;
+border-radius: 49px;
+outline: none;
+background: cadetblue;
+color: white;
+border: none;
+font-size: 18px;
+}
+::placeholder {
+  color: white;
+}
+.form-btn{
+  margin: 41px 0px;
+  height: 54px;
+}
+.form-btn button {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 32px;
+  font-size: 22px;
+  cursor: pointer;
+  background-color: cadetblue;
+  color: white;
+}
