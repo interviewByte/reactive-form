@@ -12,8 +12,20 @@
             <div class="input-container-field">
                 <input type="email" formControlName="email" placeholder="Enter Email">
             </div>
+  <div formGroupName="address">
+    <h2>Address</h2>
+    <label for="street">Street: </label><br>
+    <input id="street" type="text" formControlName="street"><br>
+    <label for="city">City: </label><br>
+    <input id="city" type="text" formControlName="city"><br>
+    <label for="state">State: </label><br>
+    <input id="state" type="text" formControlName="state"><br>
+    <label for="zip">Zip Code: </label><br>
+    <input id="zip" type="text" formControlName="zip"><br>
+  </div>
             <div class="form-btn">
                 <button type="submit">Submit Form</button>
+                <button type="button" (click)="updateProfile()">Update Profile</button>
             </div>
         </form>
     </div>
