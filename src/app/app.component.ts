@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FormsServicesService } from './services/forms-services.service';
 @Component({
   selector: 'app-root',
@@ -9,16 +9,17 @@ import { FormsServicesService } from './services/forms-services.service';
 export class AppComponent implements OnInit{
 baseURL = 'http://localhost:8080/login'
   title = 'reactive-form';
-  profileForm = new FormGroup({
-    name : new FormControl(''),
-    email : new FormControl(''),
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl(''),
-    })
-  })
+  formBuilder = inject(FormBuilder)
+  profileForm = this.formBuilder.group({
+    name: [''],
+    email: [''],
+    address: this.formBuilder.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
+    }),
+  });
  constructor(private service: FormsServicesService) {}
  ngOnInit(): void {
    
